@@ -1,0 +1,31 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Send phone number if he wants to speak to an agent
+  steps:
+  - intent: talk_human
+  - action: utter_agentnumber
+
+- rule: Ask for location
+  steps:
+  - intent: inquire_houses
+  - action: utter_ask_location
+
+- rule: Ask for price
+  steps:
+  - action: utter_ask_price
+
+- rule: Ask for date
+  steps:
+  - action: utter_ask_date

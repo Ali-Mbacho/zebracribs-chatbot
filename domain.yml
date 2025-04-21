@@ -1,0 +1,77 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+entities:
+  - location
+  - price
+  - date
+
+slots:
+  location:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+
+  price:
+    type: float
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: price
+
+
+  date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+
+
+responses:
+
+  utter_ask_location:
+  - text: "Which location are you interested in?"
+  utter_ask_price:
+  - text: "What's your budget for the house?"
+  utter_ask_date:
+  - text: "When do you want the house to be available?"
+  utter_no_results:
+  - text: "No houses match your criteria. Please refine your search."
+  utter_goodbye:
+  - text: "Thank you for using our service! Have a great day!"
+  utter_houses_found:
+  - text: "Here are the available houses based on your criteria:\n{houses}"
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_fetch_houses
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

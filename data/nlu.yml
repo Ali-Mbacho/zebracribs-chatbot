@@ -1,0 +1,117 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: search_for_house
+  examples: |
+    - I am looking for a house?
+    - Am searching for apartment?
+    - Which houses are available?
+    - Houses in this area?
+    - Houses available? 
+    - Show me the houses?
+    - Vacant houses?
+    - Available houses?
+    - Show me houses in [Warsaw](location)
+    - Houses available in [Cracow](location)
+    - Any houses under [50000](price)?
+    - List houses available from [2025-01-01](date)
+    - I need a house in [Gdansk](location) for [70000](price)
+    - Are there houses available in [Poznan](location)?
+    - Do you have houses under [100000](price)?
+    - Available houses on [2025-01-10](date)
+
+- intent: talk_human
+  examples:  |
+    - I want to talk to an agent?
+    - Can I speak to human?
+    - Can I speak to someone?
+    - Connect me with an agent?
+    - Can I get the agent number?

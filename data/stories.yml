@@ -30,7 +30,23 @@ stories:
   - action: utter_goodbye
 
 
-- story: find house
+- story: find house happy path
   steps:
-  - intent: search_for_house
-  - action: utter_searchhouse
+  - intent: search_properties
+  - action: action_fetch_houses
+
+- story: natural property search
+  steps:
+    - intent: search_properties
+      entities:
+        - location: "Praga"
+        - price: "2000"
+        - date: "March 2025"
+    - action: action_fetch_houses
+
+- story: partial information search
+  steps:
+    - intent: search_properties
+      entities:
+        - location: "Mokotów"
+    - action: action_fetch_houses

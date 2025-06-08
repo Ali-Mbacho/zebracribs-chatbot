@@ -29,3 +29,54 @@ rules:
 - rule: Ask for date
   steps:
   - action: utter_ask_date
+
+- rule: Immediate property search with all details
+  steps:
+    - intent: search_properties
+      entities:
+        - location
+        - price
+        - date
+    - action: action_search_properties
+
+- rule: Immediate search with just location
+  steps:
+    - intent: search_properties
+      entities:
+        - location
+    - action: action_search_properties
+
+- rule: Ask for missing price
+  steps:
+    - intent: search_properties
+      entities:
+        - location
+    - action: utter_ask_price
+    - intent: inform
+      entities:
+        - price
+    - action: action_search_properties
+
+- rule: Ask for missing location
+  steps:
+    - intent: search_properties
+      entities:
+        - price
+    - action: utter_ask_location
+    - intent: inform
+      entities:
+        - location
+    - action: action_search_properties
+
+- rule: Handle minimal search request
+  steps:
+    - intent: search_properties
+    - action: utter_ask_location
+    - intent: inform
+      entities:
+        - location
+    - action: utter_ask_price
+    - intent: inform
+      entities:
+        - price
+    - action: action_search_properties
